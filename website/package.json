@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start:server": "PORT=3001 node server/index.js",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google-cloud/bigquery": "^7.9.0",
     "@google/generative-ai": "^0.24.1",
     "@orama/orama": "^3.1.16",
+    "express": "^4.21.1",
     "image-size": "^2.0.2",
     "lucide-react": "^0.554.0",
     "react": "^19.2.0",

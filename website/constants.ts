@@ -4,7 +4,9 @@ export const NAV_LINKS = [
   { name: 'Profile', href: '#profile' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
+  { name: 'Deployment', href: '#deployment' },
   { name: 'My Story', href: '#my-story' },
+  { name: 'Training Log', href: '#activities' },
   { name: 'Contact', href: '#contact' },
 ];
 

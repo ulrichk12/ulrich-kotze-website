@@ -6,6 +6,8 @@ import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { MyStory } from './components/MyStory';
+import { Activities } from './components/Activities';
+import { Deployment } from './components/Deployment';
 import { HealthcareDataStrategy } from './components/projects/HealthcareDataStrategy';
 import { EnterpriseForecasting } from './components/projects/EnterpriseForecasting';
 
@@ -45,6 +47,28 @@ function App() {
   }
   if (currentPage === 'my-story') {
     return <MyStory />;
+  }
+  if (currentPage === 'activities') {
+    return (
+      <div className="min-h-screen bg-slate-50 font-sans antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+        <Navbar />
+        <main>
+          <Activities />
+        </main>
+        <Contact />
+      </div>
+    );
+  }
+  if (currentPage === 'deployment') {
+    return (
+      <div className="min-h-screen bg-slate-950 font-sans antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+        <Navbar darkMode={true} />
+        <main>
+          <Deployment />
+        </main>
+        <Contact />
+      </div>
+    );
   }
 
   // Render main portfolio page

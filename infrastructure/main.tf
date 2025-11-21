@@ -35,6 +35,20 @@ resource "google_project_iam_member" "cloud_run_invoker" {
   member  = "serviceAccount:${google_service_account.cloud_run_sa.email}"
 }
 
+# IAM binding to allow the service account to read from BigQuery
+resource "google_project_iam_member" "bigquery_viewer" {
+  project = var.project_id
+  role    = "roles/bigquery.dataViewer"
+  member  = "serviceAccount:${google_service_account.cloud_run_sa.email}"
+}
+
+# IAM binding to allow the service account to run BigQuery jobs
+resource "google_project_iam_member" "bigquery_job_user" {
+  project = var.project_id
+  role    = "roles/bigquery.jobUser"
+  member  = "serviceAccount:${google_service_account.cloud_run_sa.email}"
+}
+
 # IAM binding to allow unauthenticated access (public web app)
 resource "google_cloud_run_service_iam_member" "public_access" {
   location = google_cloud_run_service.ulrich_kotze_website.location

@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../constants';
 import { Menu, X } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  darkMode?: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ darkMode = false }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -16,12 +20,11 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled || mobileMenuOpen ? 'bg-white/80 backdrop-blur-md border-b border-gray-100 py-4' : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled || mobileMenuOpen ? 'bg-white/80 backdrop-blur-md border-b border-gray-100 py-4' : 'bg-transparent py-6'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold tracking-tight text-slate-900">
+        <a href="#" className={`text-2xl font-bold tracking-tight ${scrolled || mobileMenuOpen ? 'text-slate-900' : darkMode ? 'text-white' : 'text-slate-900'}`}>
           Ulrich<span className="text-slate-400">.</span>
         </a>
 
@@ -31,7 +34,12 @@ export const Navbar: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
+              className={`text-sm font-medium transition-colors ${scrolled || mobileMenuOpen
+                  ? 'text-slate-600 hover:text-slate-900'
+                  : darkMode
+                    ? 'text-slate-300 hover:text-white'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
             >
               {link.name}
             </a>
@@ -40,7 +48,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-slate-900 p-2">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className={`p-2 ${scrolled || mobileMenuOpen ? 'text-slate-900' : darkMode ? 'text-white' : 'text-slate-900'}`}>
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
