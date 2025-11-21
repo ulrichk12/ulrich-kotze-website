@@ -21,7 +21,7 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     role: 'Data Science Team Lead & ML Engineer',
     company: 'Spatialedge',
     period: 'Nov 2021 - July 2024',
-    description: 'Advanced from Junior ML Engineer to Team Lead. Worked across Retail, Credit, Supply Chain, Banking, and Healthcare. Built enterprise-level demand forecasting models, credit scoring engines, and cloud-based data platforms.',
+    description: 'Advanced from Junior ML Engineer to Team Lead. Worked across Retail, Supply Chain, Banking, and Healthcare. Built enterprise-level demand forecasting models and cloud-based data platforms.',
   },
   {
     id: '3',
@@ -102,15 +102,7 @@ export const PROJECT_DATA: ProjectItem[] = [
     type: 'narrative',
     narrativeUrl: '#project-enterprise-forecasting',
   },
-  {
-    id: '3',
-    title: 'Credit Scoring',
-    year: '2021-2024',
-    description: 'Built several credit scoring models for a leading retailer.',
-    tags: ['Credit Risk', 'Classification'],
-    type: 'narrative',
-    narrativeUrl: '#project-credit-scoring',
-  },
+
   {
     id: '4',
     title: 'Resampling Algorithms for Multi-class classification',

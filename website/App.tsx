@@ -8,7 +8,7 @@ import { Contact } from './components/Contact';
 import { MyStory } from './components/MyStory';
 import { HealthcareDataStrategy } from './components/projects/HealthcareDataStrategy';
 import { EnterpriseForecasting } from './components/projects/EnterpriseForecasting';
-import { CreditScoringSupplyChain } from './components/projects/CreditScoringSupplyChain';
+
 import { MultiClassClassification } from './components/projects/MultiClassClassification';
 import { GenomicClassification } from './components/projects/GenomicClassification';
 
@@ -36,9 +36,7 @@ function App() {
   if (currentPage === 'project-enterprise-forecasting') {
     return <EnterpriseForecasting />;
   }
-  if (currentPage === 'project-credit-scoring-supply-chain') {
-    return <CreditScoringSupplyChain />;
-  }
+
   if (currentPage === 'project-multi-class-classification') {
     return <MultiClassClassification />;
   }
